@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
+  setState (state) {
+    this.state = {
+      isstate:false
+    }
+  }
+  changeLikeText () {
+    console.log(this.state)
+    this.setState({
+      isstate:!this.isstate
+    })
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p className="App-intro">
-          2 To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <p onClick={this.changeLikeText()}>this is thi</p>
       </div>
     );
   }
